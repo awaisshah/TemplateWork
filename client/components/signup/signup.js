@@ -22,6 +22,7 @@
         this.email =  "";
         this.password =  "";
         this.name = "";
+        this.role="";
 
 
         this.userSignUp = function() {
@@ -29,6 +30,7 @@
             console.log(this.email);
             console.log(this.password);
             console.log(this.name);
+            console.log(this.role);
 
             firebase.auth().createUserWithEmailAndPassword(vm.email, vm.password).catch(function(error) {
                 // Handle Errors here.
@@ -42,9 +44,10 @@
                 firebase.auth().onAuthStateChanged(function(user) {
                     if (user) {
                         console.log(user.uid);
-                        firebase.database().ref('users/' + user.uid).set({
+                        firebase.database().ref('users/'+vm.role+'/'+user.uid).set({
                             username: vm.name,
-                            email: vm.email
+                            email: vm.email,
+                            role:vm.role
                         });
 
                         // User is signed in.

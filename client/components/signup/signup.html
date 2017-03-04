@@ -35,6 +35,18 @@
                     <p ng-show="SignupForm.email.$error.email">In correct email.</p>
                 </div>
 
+                <div >
+                    <p>
+                        <input name="SignupForm.role" type="radio" value="customer" id="customer" ng-model="signup.role"/>
+                        <label for="customer">Customer</label>
+                    </p>
+                    <p>
+                        <input name="SignupForm.role" type="radio" id="owner" value="owner" ng-model="signup.role"/>
+                        <label for="owner">Owner</label>
+                    </p>
+
+                </div>
+
 
                 <div class="input-field" style="margin-bottom:20px;">
                     <i class="ion-android-lock prefix"></i>

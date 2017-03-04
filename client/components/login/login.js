@@ -12,8 +12,8 @@
     function LoginController($state, UserService) {
         var vm = this;
         console.log("LOGIN");
-        this.email = "";
-        this.password = "";
+        this.email = "qwe@qwe.com";
+        this.password = "123123";
 
 
         var check = UserService.checkUser();
